@@ -1,0 +1,10 @@
+{
+ "repo": "yerevann/coco-karpathy",
+ "revision": "448fdb1bc7b2d09e46881c4541a14d796a3d41e8",
+ "file": "data/validation-00000-of-00001.parquet",
+ "sha256": "1cf263128100efa185592296b3caeacf24aa88a5341844b82aba5422d85bf815",
+ "images": 5000,
+ "picked": 2000,
+ "seed": 0,
+ "captions_sha256": "9618eba759af9db17def129b9664ab1ba40febfe0d18bb63b7da102279e747f7"
+}

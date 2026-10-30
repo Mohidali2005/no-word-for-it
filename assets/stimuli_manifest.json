@@ -1,0 +1,175 @@
+{
+ "authors_commit": "18655d407bbe69864eea3d2f13bba0144c8f4e33",
+ "items_per_set": 600,
+ "sets": {
+  "rep_named": {
+   "items": 100,
+   "shapes": 8,
+   "files": 209,
+   "letters": {
+    "A": 25,
+    "B": 31,
+    "C": 23,
+    "D": 21
+   },
+   "items_sha256": "10ea8c62187c49e94872d68b541b4f30b3c79737d97bf27ec277a6b0c4568e7e",
+   "all_files_sha256": "fcec59c4b1143cb5e77f3c1eb4cb15e814d089e94ab0eb699c46b76586421422"
+  },
+  "rep_squig30": {
+   "items": 100,
+   "shapes": 10,
+   "files": 211,
+   "letters": {
+    "A": 24,
+    "B": 23,
+    "C": 26,
+    "D": 27
+   },
+   "items_sha256": "0cdb349a3eb926a81c79a4458b1126500127a0e8acc045d41b3d10e8f1c66c02",
+   "all_files_sha256": "849bb85a534d7a95e75e132290548053e58255388ff0ebd5ceff87508fcf69ac"
+  },
+  "named_fill": {
+   "items": 600,
+   "shapes": 8,
+   "files": 1209,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "9a7d5a896eda6bbcdd80c1481bfa7e220c35a30708bcf757973507586d7654e6",
+   "all_files_sha256": "675d92ff4f0ac1d32e4608fed23793318c496e6809107332e3e798403d91bb7b"
+  },
+  "named_line": {
+   "items": 600,
+   "shapes": 8,
+   "files": 1209,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "7a2fef1ff19ca195d767ae47ebf7edd81f4b5c72d116f268e3e30834134ba322",
+   "all_files_sha256": "0393a2922b87f1bc1f142f8c4805c5d80c21dd69d50c154b422373e4668a5a1d"
+  },
+  "unnamed_line": {
+   "items": 600,
+   "shapes": 40,
+   "files": 1241,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "64429eb0c98e769ad80903292974356cb2581fc482cfb092cf45bb74047a195d",
+   "all_files_sha256": "67387bbd89abaefb571b60538fa776ad29aae82db96cfa4e6297ad570780e304"
+  },
+  "unnamed_fill": {
+   "items": 600,
+   "shapes": 40,
+   "files": 1241,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "932dbfdf64e4e0873f5c0acdafdff0a593e7a19b571b14bd4a3178dea2636c02",
+   "all_files_sha256": "20cb9d4972fa8e697672ecbd8f5cf8680f04156d7478be22568fb24038720763"
+  },
+  "named_cx": {
+   "items": 600,
+   "shapes": 10,
+   "files": 1211,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "2ca94eb6c8d83441916154ab44427fb840262b80bbd78d87ff18f2814b59fea9",
+   "all_files_sha256": "969490ff749084194321d1e5c3ef985b7524108907bd6bb334198079758d1ad2"
+  },
+  "squig_n5": {
+   "items": 600,
+   "shapes": 40,
+   "files": 1241,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "5d53db437e8e155779ea61f74382c2bf2ec194eba734c7786d92f372cddfe05a",
+   "all_files_sha256": "525a059c91d2fbfdb95edf8d3f05ca455b22047a1b2c0c6fbfe1806d86040d98"
+  },
+  "squig_n10": {
+   "items": 600,
+   "shapes": 40,
+   "files": 1241,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "1503d06f7c38ad9d7315f4046059b31defc570305dbbef47a926da231c8b21ef",
+   "all_files_sha256": "c8fde705c7799d303b2f0f375a03b9f35306751e6ea1881885202a072f125572"
+  },
+  "squig_n20": {
+   "items": 600,
+   "shapes": 40,
+   "files": 1241,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "16d3f0d933f83cfd61e9a3c9f773da0d10c2b107ffc8208f7fd7c766eb68d525",
+   "all_files_sha256": "d07584d7b603a48956e6ee9ae6cee040e87ac14506544313d9a1ff459b93ed66"
+  },
+  "squig_n50": {
+   "items": 600,
+   "shapes": 40,
+   "files": 1241,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "1a22374a8e152cbf68e029beabad35ee3e5319400dab6750e8b3d2787351bdbf",
+   "all_files_sha256": "4ab509548d0b83762f00eadcde379f352eb8ad6d1870b65e7e1536eecab68930"
+  },
+  "taught30": {
+   "items": 600,
+   "shapes": 10,
+   "files": 1211,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "f835f72ab95e2d9d14432977bde2062730b4659b16f71398c6e28df5b77d594e",
+   "all_files_sha256": "9dd40b43b854f991554cec5874a82352a9d1605edcf56d9b8535e0c8866b1003"
+  },
+  "untaught30": {
+   "items": 600,
+   "shapes": 10,
+   "files": 1211,
+   "letters": {
+    "A": 150,
+    "B": 150,
+    "C": 150,
+    "D": 150
+   },
+   "items_sha256": "1bc2066cdf180eaf0be5a113f669cf51690aab4cf6a5dfc65e2234da90adeb70",
+   "all_files_sha256": "3ee5694980b88b8b80ba26d61b7de268782d0f7ab679856a0f3d23ade86f7e0f"
+  }
+ }
+}

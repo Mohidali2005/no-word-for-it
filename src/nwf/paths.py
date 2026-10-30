@@ -11,3 +11,9 @@ AUTHORS_SHAPES = AUTHORS/"2D_shape_recognition"
 STIMULI = Path(os.environ.get("NWF_STIMULI",DATA/"stimuli"))
 RESULTS = Path(os.environ.get("NWF_RESULTS",ROOT/"results"))
 ANALYSIS = ROOT/"analysis"
+# tests point this at tiny random models built from the real configs
+LOCAL_MODELS = os.environ.get("NWF_LOCAL_MODELS")
+# per item vision outputs for the precision check are large so they stay outside the saved results
+SCRATCH = Path(os.environ.get("NWF_SCRATCH",ROOT/"cache"))
+CAPTIONS = Path(os.environ.get("NWF_CAPTIONS",ROOT/"assets"/"captions.txt"))
+STIMULI_MANIFEST = ROOT/"assets"/"stimuli_manifest.json"
