@@ -1,0 +1,16 @@
+{
+  "id": "infernalfishy/nwf-tests",
+  "title": "nwf tests",
+  "code_file": "run_tests.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": false,
+  "enable_tpu": false,
+  "enable_internet": true,
+  "docker_image_pinning_type": "original",
+  "dataset_sources": ["infernalfishy/nwf-stimuli"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}
