@@ -25,6 +25,29 @@ INK = (20,20,20)
 # shapes are scaled so their longer side is 180 pixels which matches the squiggles the authors drew
 SHAPE_BOX = 180
 
+# a named shape passes the naming check when the model answer contains one of these words
+NAMING_PROMPT = "What shape is this? Answer with one word."
+NAMES = {
+    "circle":["circle"],
+    "oval":["oval","ellipse","egg"],
+    "square":["square"],
+    "diamond":["diamond","rhombus"],
+    "hexagon":["hexagon"],
+    "pentagon":["pentagon"],
+    "triangle":["triangle"],
+    "star":["star"],
+    "heart":["heart"],
+    "arrow":["arrow"],
+    "crescent":["crescent","moon"],
+    "plus":["plus","cross"],
+    "lightning":["lightning","bolt"],
+    "cloud":["cloud"],
+    "key":["key"],
+    "teardrop":["drop"],
+    "spade":["spade"],
+    "club":["club","clover","trefoil"],
+}
+
 ITEMS = 600
 # the first items of every set only pick the probe layer and never enter the evidence tests
 CALIBRATION = 100

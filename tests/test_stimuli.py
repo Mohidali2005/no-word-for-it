@@ -66,6 +66,11 @@ def test_shapes_have_matched_size():
         assert config.SHAPE_BOX-2<=max(ys.max()-ys.min()+1,xs.max()-xs.min()+1)<=config.SHAPE_BOX+config.STROKE+2
 
 
+def test_every_named_shape_has_accepted_names():
+    assert set(config.NAMES)==set(shapes.NAMED)|set(shapes.ICONS)
+    assert all(words and all(w==w.lower() for w in words) for words in config.NAMES.values())
+
+
 def test_fill_and_outline_differ_only_in_style():
     for parts in shapes.NAMED.values():
         filled = np.array(shapes.draw(parts,"fill").convert("L"))<128
