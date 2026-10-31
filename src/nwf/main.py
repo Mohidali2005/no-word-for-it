@@ -33,7 +33,8 @@ def kaggle(plan,smoke,stop_at):
     for entry in plan:
         name,mode,*sets = entry.split(":")
         command = ["--model",name,"--mode",mode,"--stop-at",str(stop_at)]+(["--smoke"] if smoke else [])
-        steps.append((entry,["nwf.run_items",*command]+(["--sets",sets[0].replace("+",",")] if sets else [])))
+        # an optional fourth field keeps only the first items of each set
+        steps.append((entry,["nwf.run_items",*command]+(["--sets",sets[0].replace("+",",")] if sets else [])+(["--items",sets[1]] if len(sets)>1 else [])))
         # the removal check runs in its own process after the model has been scored on every set
         if name in config.REMOVAL_MODELS and not sets:
             steps.append((f"{entry}:removal",["nwf.removal",*command]))
@@ -58,7 +59,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="run the study stages")
     parser.add_argument("--kaggle",action="store_true",help="run the gpu stages")
     parser.add_argument("--smoke",action="store_true",help="the short gpu run that checks every code path and the precision")
-    parser.add_argument("--plan",help="comma separated model:mode or model:mode:set+set entries for the main gpu run")
+    parser.add_argument("--plan",help="comma separated model:mode or model:mode:set+set or model:mode:set+set:items entries for the main gpu run")
     parser.add_argument("--stop-at",type=float,default=float("inf"),help="unix time after which no new work starts")
     args = parser.parse_args()
     if args.kaggle:

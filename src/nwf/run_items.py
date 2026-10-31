@@ -311,12 +311,13 @@ if __name__ == "__main__":
     parser.add_argument("--mode",choices=["full","fast"],required=True)
     parser.add_argument("--smoke",action="store_true",help="only the first items of each set plus the extra smoke checks")
     parser.add_argument("--sets",help="comma separated sets to score instead of all of them")
+    parser.add_argument("--items",type=int,help="only the first items of each set")
     parser.add_argument("--stop-at",type=float,help="unix time after which no new chunk starts")
     args = parser.parse_args()
     family = config.MODELS[args.model]["family"]
     model,processor = models.load(args.model,args.mode)
     store = capture(model)
-    limit = config.SMOKE_ITEMS if args.smoke else None
+    limit = config.SMOKE_ITEMS if args.smoke else args.items
     n_captions = 200 if args.smoke else config.CAPTIONS
     n_items = 2 if args.smoke else config.BASIS_ITEMS
     fit_bases(model,processor,store,args.model,args.mode,family,n_captions,n_items)
