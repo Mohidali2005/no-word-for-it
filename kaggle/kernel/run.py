@@ -11,11 +11,11 @@ from kaggle_secrets import UserSecretsClient
 
 START = time.time()
 # smoke checks every code path and the precision of each model while main scores the plan below
-MODE = "smoke"
+MODE = "main"
 COMMIT = "d96d7ddbc6b99791a352db5beae5900796f2a65b"
 REPO = "https://github.com/Mohidali2005/no-word-for-it.git"
 # model and precision pairs for a main run as passed by the smoke run for example qwen:fast,qwen_names:fast
-PLAN = ""
+PLAN = "qwen:fast,qwen_names:fast"
 CODE = Path("/tmp/code")
 RESULTS = Path("/kaggle/working/results")
 # attached datasets do not always appear at the same place so the stimuli are found by one of their sets
