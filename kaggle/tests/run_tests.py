@@ -15,6 +15,10 @@ AUTHORS_REPO = "https://github.com/Patchwork53/VLMs-Need-Words-COLM2026.git"
 AUTHORS_COMMIT = "18655d407bbe69864eea3d2f13bba0144c8f4e33"
 CODE = Path("/tmp/code")
 OUT = Path("/kaggle/working")
+# attached datasets do not always appear at the same place so the stimuli are found by one of their sets
+found = [Path(folder).parent for folder,dirs,files in os.walk("/kaggle/input",followlinks=True) if Path(folder).name=="rep_named" and "items.jsonl" in files]
+assert len(found)==1,f"expected one stimuli folder under /kaggle/input but found {found}"
+STIMULI = found[0]
 # the suite runs first on the preinstalled library and then again on the older one the laptop also uses
 VERSIONS = ["preinstalled","4.57.1"]
 
@@ -41,9 +45,9 @@ subprocess.run(["git","clone","--quiet","--filter=blob:none","--no-checkout",AUT
 subprocess.run(["git","-C",str(authors),"sparse-checkout","set","2D_shape_recognition"],check=True)
 subprocess.run(["git","-C",str(authors),"checkout","--quiet","--detach",AUTHORS_COMMIT],check=True)
 assert shell(f"git -C {authors} rev-parse HEAD")==AUTHORS_COMMIT,"wrong authors commit"
-print(f"code at {COMMIT} and authors code at {AUTHORS_COMMIT}")
+print(f"code at {COMMIT} and authors code at {AUTHORS_COMMIT} and stimuli at {STIMULI}")
 
-env = dict(os.environ,PYTHONPATH=str(CODE/"src"),NWF_STIMULI="/kaggle/input/nwf-stimuli",HF_HOME="/tmp/hf",HF_TOKEN=hf_token,MPLBACKEND="Agg")
+env = dict(os.environ,PYTHONPATH=str(CODE/"src"),NWF_STIMULI=str(STIMULI),HF_HOME="/tmp/hf",HF_TOKEN=hf_token,MPLBACKEND="Agg")
 # the same test runner version as on the laptop
 subprocess.run([sys.executable,"-m","pip","install","--quiet","pytest==9.2.0"],check=True)
 summary = []

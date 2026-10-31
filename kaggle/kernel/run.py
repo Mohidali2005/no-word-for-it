@@ -18,9 +18,13 @@ REPO = "https://github.com/Mohidali2005/no-word-for-it.git"
 PLAN = ""
 CODE = Path("/tmp/code")
 RESULTS = Path("/kaggle/working/results")
-STIMULI = Path("/kaggle/input/nwf-stimuli")
-# a results folder of an earlier run attached as a dataset lets a main run continue from it
-RESUME = Path("/kaggle/input/nwf-partial/results")
+# attached datasets do not always appear at the same place so the stimuli are found by one of their sets
+found = [Path(folder).parent for folder,dirs,files in os.walk("/kaggle/input",followlinks=True) if Path(folder).name=="rep_named" and "items.jsonl" in files]
+assert len(found)==1,f"expected one stimuli folder under /kaggle/input but found {found}"
+STIMULI = found[0]
+# a results folder of an earlier main run attached as a dataset lets a main run continue from it
+RESUME = [Path(folder) for folder,dirs,files in os.walk("/kaggle/input",followlinks=True) if "environment_main.json" in files]
+assert len(RESUME)<=1,f"expected at most one earlier results folder under /kaggle/input but found {RESUME}"
 # no new work starts after this many hours so the session still ends inside the twelve hour limit
 HOURS = 11.0
 
@@ -41,12 +45,12 @@ subprocess.run(["git","clone","--quiet",REPO,str(CODE)],env=git_env,check=True)
 subprocess.run(["git","-C",str(CODE),"checkout","--quiet","--detach",COMMIT],check=True)
 head = subprocess.run(["git","-C",str(CODE),"rev-parse","HEAD"],capture_output=True,text=True,check=True).stdout.strip()
 assert head==COMMIT,f"checked out {head} instead of {COMMIT}"
-print(f"code at commit {head}")
+print(f"code at commit {head} and stimuli at {STIMULI}")
 
 RESULTS.mkdir(parents=True,exist_ok=True)
-if MODE=="main" and RESUME.exists():
-    shutil.copytree(RESUME,RESULTS,dirs_exist_ok=True)
-    print("continuing from an earlier results folder")
+if MODE=="main" and RESUME:
+    shutil.copytree(RESUME[0],RESULTS,dirs_exist_ok=True)
+    print(f"continuing from the earlier results folder {RESUME[0]}")
 (RESULTS/f"environment_{MODE}.json").write_text(json.dumps({
     "mode":MODE,
     "commit":COMMIT,
