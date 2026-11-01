@@ -85,7 +85,7 @@ def interval(point,samples):
 def run_model(run,name):
     """Compute the set table the paired differences and the regression of experiment one for one model"""
     rng = np.random.default_rng(0)
-    data = {s:load(run,name,s) for s in SETS}
+    data = {s:load(run,name,s) for s in SETS if (RESULTS/run/name/s).exists()}
     table = {}
     boots = {}
     for s,d in data.items():

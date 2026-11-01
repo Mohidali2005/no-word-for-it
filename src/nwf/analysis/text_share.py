@@ -101,7 +101,7 @@ def run_model(run,name):
     first = REMOVAL_FIRST_LAYER[MODELS[name.rsplit("_",1)[0]]["family"]]
     keep = {s for pair in DIFFERENCES.values() for s in pair}
     table,stats = {},{}
-    for s in SETS:
+    for s in [s for s in SETS if (RESULTS/run/name/s).exists()]:
         point,boot,items,clusters = summarise(*load(run,name,s),first,rng)
         if s in keep:
             stats[s] = (point,boot)

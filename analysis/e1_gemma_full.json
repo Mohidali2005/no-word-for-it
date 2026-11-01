@@ -1,0 +1,212 @@
+{
+ "model": "gemma_full",
+ "sets": {
+  "rep_named": {
+   "items": 100,
+   "clusters": 8,
+   "accuracy": {
+    "value": 0.81,
+    "low": 0.6938775510204082,
+    "high": 0.9
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.799129766913778,
+    "low": 0.6757316757316758,
+    "high": 0.8861215538847118
+   },
+   "predicted_letter_share": [
+    0.23,
+    0.35,
+    0.21,
+    0.21
+   ]
+  },
+  "rep_squig30": {
+   "items": 100,
+   "clusters": 10,
+   "accuracy": {
+    "value": 0.48,
+    "low": 0.3417572598659717,
+    "high": 0.6095238095238096
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.47896150749411615,
+    "low": 0.33992165242165245,
+    "high": 0.6079825758360806
+   },
+   "predicted_letter_share": [
+    0.34,
+    0.22,
+    0.18,
+    0.26
+   ]
+  },
+  "named_fill": {
+   "items": 200,
+   "clusters": 8,
+   "accuracy": {
+    "value": 0.835,
+    "low": 0.7819905213270142,
+    "high": 0.8920454545454546
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.839120496683522,
+    "low": 0.7890744714917762,
+    "high": 0.8935015005813274
+   },
+   "predicted_letter_share": [
+    0.24,
+    0.265,
+    0.26,
+    0.235
+   ]
+  },
+  "named_line": {
+   "items": 200,
+   "clusters": 8,
+   "accuracy": {
+    "value": 0.915,
+    "low": 0.844559585492228,
+    "high": 0.9665071770334929
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.9135935254716543,
+    "low": 0.8438134227664034,
+    "high": 0.9650964320887953
+   },
+   "predicted_letter_share": [
+    0.25,
+    0.29,
+    0.23,
+    0.23
+   ]
+  },
+  "unnamed_line": {
+   "items": 200,
+   "clusters": 40,
+   "accuracy": {
+    "value": 0.35,
+    "low": 0.26839562876148243,
+    "high": 0.4375
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.3631282654440206,
+    "low": 0.2787899106760144,
+    "high": 0.4479213111630924
+   },
+   "predicted_letter_share": [
+    0.405,
+    0.22,
+    0.175,
+    0.2
+   ]
+  },
+  "unnamed_fill": {
+   "items": 200,
+   "clusters": 40,
+   "accuracy": {
+    "value": 0.39,
+    "low": 0.31606156515788447,
+    "high": 0.47030430984274885
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.3819457503281033,
+    "low": 0.3079501240219408,
+    "high": 0.4611545799617457
+   },
+   "predicted_letter_share": [
+    0.38,
+    0.28,
+    0.1,
+    0.24
+   ]
+  }
+ },
+ "differences": {
+  "e1a_main_named_fill_minus_unnamed_line": {
+   "accuracy": {
+    "value": 0.485,
+    "low": 0.3822283394614597,
+    "high": 0.5851581063215544
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.47599223123950135,
+    "low": 0.37450680449426776,
+    "high": 0.575138196740901
+   }
+  },
+  "e1a_replication_rep_named_minus_rep_squig30": {
+   "accuracy": {
+    "value": 0.33000000000000007,
+    "low": 0.15641217594891865,
+    "high": 0.49808365153475287
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.32016825941966187,
+    "low": 0.14376882316388248,
+    "high": 0.4875452183250589
+   }
+  },
+  "e1b_filled_named_minus_unnamed": {
+   "accuracy": {
+    "value": 0.44499999999999995,
+    "low": 0.34843612635149046,
+    "high": 0.538763616492202
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.45717474635541866,
+    "low": 0.36251043181200093,
+    "high": 0.5487794477364711
+   }
+  },
+  "e1b_line_named_minus_unnamed": {
+   "accuracy": {
+    "value": 0.5650000000000001,
+    "low": 0.45190936035198886,
+    "high": 0.6620381864867159
+   },
+   "letter_balanced_accuracy": {
+    "value": 0.5504652600276336,
+    "low": 0.43909328572334805,
+    "high": 0.6487166699573269
+   }
+  },
+  "e1b_main_mean_of_filled_and_line": {
+   "accuracy": {
+    "value": 0.5049999999999999,
+    "low": 0.43082183151826076,
+    "high": 0.5720007754245183
+   }
+  }
+ },
+ "regression": {
+  "terms": [
+   "const",
+   "named",
+   "filled",
+   "log_complexity",
+   "lookalike"
+  ],
+  "coef": [
+   0.8203,
+   2.3956,
+   -1.481,
+   -0.3179,
+   0.3666
+  ],
+  "se": [
+   1.5566,
+   0.2811,
+   1.001,
+   0.2336,
+   1.368
+  ],
+  "named_coef_ci95": [
+   1.8446936496152873,
+   2.946481496627836
+  ],
+  "named_p": 1.5548142769976302e-17,
+  "items": 800,
+  "clusters": 88
+ }
+}

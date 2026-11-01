@@ -75,7 +75,7 @@ def curve(point,boot):
 def run_model(run,name):
     """Compute the probe layer the probe and behaviour rates and the named against unnamed differences of experiment two"""
     rng = np.random.default_rng(0)
-    data = {s:load(run,name,s) for s in SETS}
+    data = {s:load(run,name,s) for s in SETS if (RESULTS/run/name/s).exists()}
     # the probe layer is the stream with the best probe accuracy over the calibration items of all sets pooled
     pooled = np.concatenate([d["probe"][d["calibration"]] for d in data.values()]).mean(0)
     layers = pooled.argmax(-1)
