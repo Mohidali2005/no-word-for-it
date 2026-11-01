@@ -12,10 +12,10 @@ from kaggle_secrets import UserSecretsClient
 START = time.time()
 # smoke checks every code path and the precision of each model while main scores the plan below
 MODE = "main"
-COMMIT = "d96d7ddbc6b99791a352db5beae5900796f2a65b"
+COMMIT = "a7527aab55e60f17d09880a632a6110eb2405c99"
 REPO = "https://github.com/Mohidali2005/no-word-for-it.git"
 # model and precision pairs for a main run as passed by the smoke run for example qwen:fast,qwen_names:fast
-PLAN = "qwen:fast,qwen_names:fast"
+PLAN = "gemma:full:named_fill+named_line+unnamed_fill+unnamed_line+rep_named+rep_squig30:300"
 CODE = Path("/tmp/code")
 RESULTS = Path("/kaggle/working/results")
 # attached datasets do not always appear at the same place so the stimuli are found by one of their sets
